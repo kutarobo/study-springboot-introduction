@@ -45,3 +45,9 @@ static content locations.
 > 참고: `spring-boot-devtools` 라이브러리를 추가하면, `html`파일을 컴파일만 해주면 서버 재시작 없이 View 파일 변경이 가능하다
 > 인텔리J 컴파일 방법: 메뉴 build -> Recompile
 
+### build
+```
+./gradlew build
+cd build/libs
+java -jar 빌드된파일.jar
+```
