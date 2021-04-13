@@ -1,5 +1,6 @@
 package com.hello.hellospring;
 
+import com.hello.hellospring.aop.TimeTraceAop;
 import com.hello.hellospring.repository.JpaMemberRepository;
 import com.hello.hellospring.repository.MemberRepository;
 import com.hello.hellospring.service.MemberService;
