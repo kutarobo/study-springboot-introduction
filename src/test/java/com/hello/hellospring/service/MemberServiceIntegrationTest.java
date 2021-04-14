@@ -34,26 +34,18 @@ public class MemberServiceIntegrationTest {
     public void 중복_회원_예외(){
         // given
         Member member1 = new Member();
-        member1.setName("spring");
+        member1.setName("test");
 
         Member member2 = new Member();
-        member2.setName("spring");
+        member2.setName("test");
 
         // when
         memberService.join(member1);
         // try..catch 대신 assertThrows 를 이용한다. member2를 join 하면 해당 join의 예외가 터져야한다.
         IllegalStateException e = assertThrows(IllegalStateException.class, () -> memberService.join(member2));
-        assertThat(e.getMessage()).isEqualTo("이미 존재하는 회원입니다.");
-/*
-        try {
-            memberService.join(member2);
-            fail();
-        } catch (IllegalStateException e) {
-            assertThat(e.getMessage()).isEqualTo("이미 존재하는 회원입니다.1");
-        }
-*/
-        // then
 
+        //then
+        assertThat(e.getMessage()).isEqualTo("이미 존재하는 회원입니다.");
     }
 
     @Test
